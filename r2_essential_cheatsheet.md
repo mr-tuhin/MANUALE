@@ -324,10 +324,38 @@ dcf until a fork happen
 then use dp to select what process you want to debug.
 ```
 
+## ESIL emulation
 
+Set emu environment:
+```
+e asm.emu=true 		# Run ESIL emulation analysis on disasm
+e asm.emu.str=true	# Show only strings if any in the asm.emu output (much less verbose)
+e asm.esil=true 	# Shows ESIL code
+e asm.emu.write=true
+e io.cache=true
+```
 
+Also, make sure r2 knows what you are emulating:
+```
+e asm.bits=32
+e asm.arch=x86
+```
 
+Deinitialize ESIL env
+```
+ar0
+aeim-
+aei-
+```
 
+Reinitialize ESIL env
+```
+aei
+aeim
+aeip
+```
+
+Start emulating!
 
 
 
